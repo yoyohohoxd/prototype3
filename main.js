@@ -1,3 +1,5 @@
+document.getElementById("toHappyButton").addEventListener("click", getAllElements);
+
 const sentiment = ml5.sentiment("movieReviews");
 console.log('ml5 version:', ml5.version);
 
@@ -20,6 +22,7 @@ function addElementToPage(text) {
 }
 
 function toHappy(allParagraphs) {
+
 
     //needs to be an argument 
     //let text = document.getElementById("happy").value;

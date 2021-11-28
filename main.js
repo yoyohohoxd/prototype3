@@ -129,6 +129,7 @@ function chooseWord(data) {
 }
 
 function getAllElements() {
+    window.alert("Function started");
     let allParagraphs = document.getElementsByTagName("p");
     toHappy(allParagraphs);
 }

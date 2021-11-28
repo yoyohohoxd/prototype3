@@ -1,12 +1,16 @@
 {
     "name": "Getting Started Example",
     "description": "Build an Extension!",
-    "version": "1.1",
+    "version": "2.1",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
     },
     "permissions": ["storage"],
+    "content-security-policy": { 
+        "extension_pages": "script-src 'self'; object-src 'self'",
+        "sandbox": "allow-scripts; script-src 'self' 'unsafe-eval' https://unpkg.com/*"
+    },
     "action": {
         "default_popup": "main.html",
         "default_icon": {

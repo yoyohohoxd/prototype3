@@ -1,4 +1,4 @@
-document.getElementById("toHappyButton").addEventListener("click", getAllElements);
+//document.getElementById("toHappyButton").addEventListener("click", getAllElements);
 
 const sentiment = ml5.sentiment("movieReviews");
 console.log('ml5 version:', ml5.version);
@@ -29,13 +29,17 @@ function toHappy(allParagraphs) {
     //allParagraphs[0].innerHTML = "THIS IS A TEST";
 
     
-    let sensitivity = parseFloat(document.getElementById("number").value);
+    let sensitivity = 0.5;
     
     if (Number.isNaN(sensitivity)) {
         sensitivity = 0.5;
     }
-    
+
     for (let j = 0; j < allParagraphs.length; j++) {
+        allParagraphs[j].innerHTML = "Sunshine and love";
+    }
+    
+    /*for (let j = 0; j < allParagraphs.length; j++) {
         let text = allParagraphs[j].innerHTML;
         
         let prediction = sentiment.predict(text);
@@ -63,18 +67,13 @@ function toHappy(allParagraphs) {
                     let apiUrl = `${url}${word}${key}`
 
                     fetching(apiUrl, replaced_split_text, i, split_text.length, allParagraphs, j);
-
-                    /*fetch(apiUrl)
-                        .then( (data) => data.json())
-                        .then(console.log("this shit"))
-                        .then( (word) => createSentence(word, replaced_split_text, i, split_text.length))*/
                     
                 } else {
                     console.log("Unpredicted outcome");
                 }
             }
         }
-    }
+    }*/
 }
 
 function createSentence(data, arrOfWords, iteration, noOfIterations, allParagraphs, j) {
@@ -130,6 +129,7 @@ function chooseWord(data) {
 
 function getAllElements() {
     let allParagraphs = document.getElementsByTagName("p");
+    console.log(allParagraphs);
     toHappy(allParagraphs);
 }
 
@@ -138,3 +138,5 @@ async function fetching(apiUrl, arrOfWords, iteration, noOfIterations, allParagr
     const data = await response.json()
     createSentence(data, arrOfWords, iteration, noOfIterations, allParagraphs, j)
 }
+
+getAllElements();

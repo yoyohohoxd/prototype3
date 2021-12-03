@@ -1,6 +1,13 @@
 {
     "name": "Getting Started Example",
     "description": "Build an Extension!",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["ml5.min.js", "main.js"],
+            "run_at": "document_end"
+        }
+    ],
     "version": "2.1",
     "manifest_version": 2,
     "background": {
@@ -12,7 +19,7 @@
         "activeTab"
     ],
     "browser_action": {
-        "default_popup": "main.html",
+        
         "default_icon": {
             "16": "/images/get_started16.png",
             "32": "/images/get_started32.png",

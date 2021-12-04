@@ -4,8 +4,8 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["ml5.min.js", "main.js"],
-            "run_at": "document_end"
+            "js": ["main.js"],
+            "run_at": "document_idle"
         }
     ],
     "version": "2.1",
@@ -19,7 +19,7 @@
         "activeTab"
     ],
     "browser_action": {
-        
+        "defualt_popup": "main.html",
         "default_icon": {
             "16": "/images/get_started16.png",
             "32": "/images/get_started32.png",

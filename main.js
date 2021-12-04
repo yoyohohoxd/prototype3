@@ -35,11 +35,11 @@ function toHappy(allParagraphs) {
         sensitivity = 0.5;
     }
 
-    for (let j = 0; j < allParagraphs.length; j++) {
-        allParagraphs[j].innerHTML = "Sunshine and love";
-    }
-    
     /*for (let j = 0; j < allParagraphs.length; j++) {
+        allParagraphs[j].innerHTML = "Sunshine and love";
+    }*/
+    
+    for (let j = 0; j < allParagraphs.length; j++) {
         let text = allParagraphs[j].innerHTML;
         
         let prediction = sentiment.predict(text);
@@ -73,7 +73,7 @@ function toHappy(allParagraphs) {
                 }
             }
         }
-    }*/
+    }
 }
 
 function createSentence(data, arrOfWords, iteration, noOfIterations, allParagraphs, j) {

@@ -41,7 +41,8 @@ function toHappy(allParagraphs) {
     
     for (let j = 0; j < allParagraphs.length; j++) {
         let text = allParagraphs[j].innerHTML;
-        
+        console.log(typeof text);
+
         let prediction = sentiment.predict(text);
         let split_text = stringToArray(text);
         let replaced_split_text = split_text;
